@@ -12,7 +12,7 @@ on:
 
 jobs:
   compile:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: Compile project
     steps:
       - name: Checkout repository
@@ -33,7 +33,7 @@ jobs:
 
   unit-tests:
     name: Unit test
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -52,7 +52,7 @@ jobs:
           ./mvnw clean test
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: Build project
     needs: [ compile,unit-tests ]
     steps:
@@ -73,7 +73,7 @@ jobs:
           ./mvnw clean package -DskipTests
 
   docker:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: Build docker image
     needs: [ build ]
     steps:
@@ -122,7 +122,7 @@ jobs:
 
   deployment:
     name: Deploy product service
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [ docker ]
     steps:
       - name: Setup SSH
