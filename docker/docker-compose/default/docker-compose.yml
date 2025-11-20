@@ -29,3 +29,4 @@ networks:
 # docker compose -f docker/docker-compose/default/docker-compose.yml up -d
 # docker logs <container-id>
 # docker compose -f docker/docker-compose/default/docker-compose.yml down
+# cat ~/.ssh/id_rsa
