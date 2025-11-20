@@ -54,6 +54,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build project
+    needs: [ compile,unit-tests ]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -74,6 +75,7 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     name: Build docker image
+    needs: [ build ]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -113,7 +115,7 @@ jobs:
           file: docker/backend/product-service/Dockerfile
           push: true
           platform: linux/amd64
-          tags: ${{ secrets.DOCKER_USERNAME }}/product-service:${{ steps.extract_version.outputs.VERSION }},${{ secrets.DOCKERHUB_USERNAME }}/product-service:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/product-service:${{ steps.extract_version.outputs.VERSION }},${{ secrets.DOCKER_USERNAME }}/product-service:latest
           build-args: |
             PROFILE=default
             APP_VERSION=${{ steps.extract_version.outputs.VERSION }}
