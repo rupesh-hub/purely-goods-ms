@@ -132,11 +132,11 @@ jobs:
 
       - name: Create deployment folder
         run: |
-          ssh ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} "mkdir -p deployment"
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} "mkdir -p deployment"
 
       - name: Copy docker compose file
         run: |
-          scp docker/docker-compose/default/docker-compose.yml ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_ID }}:deployment/docker-compose.yml
+          scp docker/docker-compose/default/docker-compose.yml ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }}:deployment/docker-compose.yml
 
       - name: Set environment variables
         run: |
