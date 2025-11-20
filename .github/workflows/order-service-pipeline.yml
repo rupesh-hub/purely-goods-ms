@@ -136,7 +136,7 @@ jobs:
 
       - name: Copy docker compose file
         run: |
-          scp docker/docker-compose.yml ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }}:deployment/docker-compose.yml
+          scp docker/docker-compose/default/docker-compose.yml ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }}:deployment/docker-compose.yml
 
       - name: Set Environment Variables
         run: |
