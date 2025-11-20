@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: product-service
+  profiles:
+    active: default
+
+server:
+  port: 8081
+  servlet:
+    context-path: /api/v1.0.0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readinessstate:
+      enabled: true
+    livenessstate:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+    info:
+      access: read_only
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: Product Service MS
+    description: Handles product management, images, categories, and filtering.
+    version: 1.0.0
+    owner: Rupesh Dulal
+    website: https://www.alfarays.tech
+  build:
+    timestamp: "@timestamp@"
+  developer:
+    name: "Rupesh Dulal"
+    email: "rupeshdulal672@gmail.com"
+    github: "https://github.com/rupeshdulal"
+

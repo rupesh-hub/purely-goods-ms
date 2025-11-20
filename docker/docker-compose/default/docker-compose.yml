@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  product-service:
+    container_name: product-service
+    image: rupesh1997/product-service:1.0.0
+    ports:
+      - "8081:8081"
+    networks:
+      - purely-goods-nw
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8081/api/v1.0.0/actuator/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  purely-goods-nw:
+    driver: bridge
+
+
+# docker compose -f docker/docker-compose/default/docker-compose.yml up -d
+# docker logs <container-id>
+# docker compose -f docker/docker-compose/default/docker-compose.yml down
