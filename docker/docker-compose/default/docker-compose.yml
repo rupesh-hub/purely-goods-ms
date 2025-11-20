@@ -1,25 +1,26 @@
 version: "3.9"
 
 services:
-  product-service:
-    container_name: product-service
-    image: rupesh1997/product-service:1.0.0
-    ports:
-      - "8081:8081"
-    networks:
-      - purely-goods-nw
-    restart: always
-    healthcheck:
-      test: [ "CMD-SHELL", "curl -f http://localhost:8081/api/v1.0.0/actuator/health || exit 1" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "3"
+
+#  product-service:
+#    container_name: product-service
+#    image: rupesh1997/product-service:1.0.0
+#    ports:
+#      - "8081:8081"
+#    networks:
+#      - purely-goods-nw
+#    restart: always
+#    healthcheck:
+#      test: [ "CMD-SHELL", "curl -f http://localhost:8081/api/v1.0.0/actuator/health || exit 1" ]
+#      interval: 30s
+#      timeout: 10s
+#      retries: 3
+#      start_period: 40s
+#    logging:
+#      driver: "json-file"
+#      options:
+#        max-size: "10m"
+#        max-file: "3"
 
   order-service:
     container_name: order-service
@@ -31,6 +32,26 @@ services:
     restart: always
     healthcheck:
       test: [ "CMD-SHELL", "curl -f http://localhost:8082/api/v1.0.0/actuator/health || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  cart-service:
+    container_name: cart-service
+    image: rupesh1997/cart-service:1.0.0
+    ports:
+      - "8083:8083"
+    networks:
+      - purely-goods-nw
+    restart: always
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8083/api/v1.0.0/actuator/health || exit 1" ]
       interval: 30s
       timeout: 10s
       retries: 3
