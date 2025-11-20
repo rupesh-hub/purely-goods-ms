@@ -1,0 +1,32 @@
+name: PRODUCT SERVICE PIPELINE
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - product-service/**
+      - docker/backend/product-service/Dockerfile
+      - docker/docker-compose/default/docker-compose.yml
+      - .github/workflows/product-service-pipeline.yml
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    name: Compile project
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup java environment
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: "corretto"
+
+      - name: Compile project
+        run: |
+          cd product-service
+          ./mvnw clean package

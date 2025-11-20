@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b35998f-613a-4ca0-ac2d-869adcca01b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cart-service/src/main/java/com/alfarays/model/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart-service/src/main/java/com/alfarays/resource/WelcomeResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/backend/product-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/backend/product-service/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/docker-compose/default/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/alfarays/model/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/alfarays/resource/WelcomeResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/alfarays/model/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/alfarays/resource/WelcomeResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/alfarays/model/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/alfarays/resource/WelcomeResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/product-service-pipeline.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AUANTUM-CART/.github/workflows/product-service-pipeline.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../AUANTUM-CART/.github/workflows/product-service-pipeline.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../COURSE-MANAGEMENT-SYSTEM/.github/workflows/backend-pipeline.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../COURSE-MANAGEMENT-SYSTEM/.github/workflows/backend-pipeline.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../COURSE-MANAGEMENT-SYSTEM/.github/workflows/frontend-pipeline.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../COURSE-MANAGEMENT-SYSTEM/.github/workflows/frontend-pipeline.yaml" afterDir="false" />
@@ -153,7 +143,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="KubernetesApiProvider"><![CDATA[{
   "contexts": [
@@ -196,7 +186,7 @@
     "Spring Boot.OrderServiceApplication.executor": "Run",
     "Spring Boot.PaymentServiceApplication.executor": "Run",
     "Spring Boot.ProductServiceApplication.executor": "Run",
-    "git-widget-placeholder": "rupesh-dev",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/rupeshdulal/Desktop/DEVOPS-FULL-COURSE/DEVOPS-PRACTICES/PURELY-GOODS",
     "node.js.detected.package.eslint": "true",
@@ -256,7 +246,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763624717054</updated>
-      <workItem from="1763624718075" duration="3057000" />
+      <workItem from="1763624718075" duration="3467000" />
     </task>
     <servers />
   </component>
